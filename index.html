@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="app.css" />
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/jquery/jquery-2.0.3.min.js">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+        <div class="app-front container">
+
+          <div class="col-sm-4 topsplit">
+          <form data-bind="submit: addTask">
+          <input type="text" class="span3" placeholder="Enter a Task" data-bind="value: dataToadd, submit: addTask"  />
+           </form>
+
+          <div class="list-group topsplit" data-bind="foreach: tasks">
+		  <div>
+          </div>
+            <div class="list-group-item itemsplit">
+
+            <div class="row">
+             <div class="col-xs-12 col-sm-11">
+			 <h4 class="list-group-item-heading" data-bind="visible: !taskName().editing(), text: taskName().name, click: taskName().edit" >&nbsp;</h4>
+             <input class="span4" data-bind="visible: taskName().editing, value: taskName().name, hasFocus: taskName().editing" />
+			 </div>
+             <div class="col-xs-12 col-sm-1"><div class="imageVal" data-bind="click: $root.removeTask"><div align="left">&nbsp;</div></div></div>
+             </div>
+
+			  <div class="row">
+			    <div class="col-xs-12 col-md-3">
+			         <span class="subitemheader"><Strong><i> Task Number </i></Strong></span>
+			    </div>
+			    <div class="col-xs-12 col-md-9">
+				      <span class="subitemvalue" data-bind="visible: !taskNumber().editing(), text: taskNumber().name, click: taskNumber().edit"></span> <input class="span4" data-bind="visible: taskNumber().editing, value: taskNumber().name, hasFocus: taskNumber().editing" />
+				</div>
+			  </div>
+
+		     <div class="row">
+	            <div class="col-xs-12 col-md-3">
+	             <span class="subitemheader"><Strong><i> Priority </i></Strong></span>
+				</div>
+	            <div class="col-xs-12 col-md-9">
+				  <span class="subitemvalue" data-bind="visible: !priority().editing(), text: priority().name, click: priority().edit"></span><input data-bind="visible: priority().editing, value: priority().name, hasFocus: priority().editing" />
+				</div>
+			 </div>
+
+			 <div class="row">
+			   <div class="col-xs-12 col-md-3">
+			     <span class="subitemheader"><Strong><i> Assignee </i></Strong></span>
+			   </div>
+               <div class="col-xs-12 col-md-9">
+                 <span class="subitemvalue" data-bind="visible: !assignee().editing(), text: assignee().name, click: assignee().edit"></span><input data-bind="visible: assignee().editing, value: assignee().name, hasFocus: assignee().editing" />
+			   </div>
+         	 </div>
+
+			 <div class="row">
+			   <div class="col-xs-12 col-md-3">
+			     <span class="subitemheader"><Strong><i> Status </i></Strong></span>
+			   </div>
+               <div class="col-xs-12 col-md-9">
+                 <span class="subitemvalue" data-bind="visible: !statusValue().editing(), text: statusValue().name, click: statusValue().edit"></span><input data-bind="visible: statusValue().editing, value: statusValue().name, hasFocus: statusValue().editing" />
+			   </div>
+         	 </div>
+
+			 <div class="row">
+			   <div class="col-xs-12 col-md-12">
+			    <p class="list-group-item-text" data-bind="visible: !description().editing(), text: description().name, click: description().edit"></p><input class="span5"  data-bind="visible: description().editing, value: description().name, hasFocus: description().editing" />
+			   </div>
+
+         	 </div>
+
+            </div>
+		  <div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div style="text-align: center;">
+              <strong>Designed by Shubhradeep Nandi</strong><br/>
+              <i>connect @https://www.linkedin.com/pub/shubhradeep-nandi/24/7b9/2ba</i>
+          </div>
+          <script data-main="main" src="js/requirejs/require.js" ></script>
+</body>
+
+</html>
